@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Perma"
+exit 0
