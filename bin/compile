@@ -13,6 +13,7 @@ TMP_BUILD_DIR=/tmp/build
 echo "-----> Moving Heroku files into place"
 
 mv ${HEROKU_FILES_DIR}/Procfile ${PROJECT_DIR}
+mv ${HEROKU_FILES_DIR}/bin ${PROJECT_DIR}
 mv ${HEROKU_FILES_DIR}/amazon-rds-combined-ca-bundle.pem ${PROJECT_DIR}
 mv ${HEROKU_FILES_DIR}/runtime.txt ${PROJECT_DIR}
 mv ${HEROKU_FILES_DIR}/wsgi_heroku.py ${PROJECT_DIR}/perma
