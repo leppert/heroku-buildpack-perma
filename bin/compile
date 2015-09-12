@@ -10,10 +10,6 @@ PROJECT_DIR=${BUILD_DIR}/${PROJECT_NAME}
 HEROKU_FILES_DIR=${BUILD_DIR}/services/heroku
 TMP_BUILD_DIR=/tmp/build
 
-indent() {
-  sed -u 's/^/       /'
-}
-
 echo "-----> Moving Heroku files into place"
 
 mv ${HEROKU_FILES_DIR}/Procfile ${PROJECT_DIR}
@@ -22,9 +18,9 @@ mv ${HEROKU_FILES_DIR}/runtime.txt ${PROJECT_DIR}
 mv ${HEROKU_FILES_DIR}/wsgi_heroku.py ${PROJECT_DIR}/perma
 mv ${HEROKU_FILES_DIR}/heroku_settings.py ${PROJECT_DIR}/perma/settings/settings.py
 
-echo "Appending extra requirements" | indent
+echo "-----> Appending extra requirements"
 cat ${HEROKU_FILES_DIR}/extra_requirements.txt >> ${PROJECT_DIR}/requirements.txt
 
-echo "-----> Moving the app folder into place"
+echo "-----> Moving app folder into place"
 mv ${BUILD_DIR} ${TMP_BUILD_DIR}
 mv ${TMP_BUILD_DIR}/${PROJECT_NAME} ${BUILD_DIR}
